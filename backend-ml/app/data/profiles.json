@@ -1,0 +1,438 @@
+{
+  "427ad101b5d4b63f": {
+    "userId": "427ad101b5d4b63f",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "Python",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "graduation",
+      "field": "btech ",
+      "gpa": "6.8",
+      "achievements": []
+    },
+    "interests": [
+      {
+        "name": "Esports",
+        "level": 4
+      }
+    ],
+    "preferences": {
+      "workEnvironment": "Remote",
+      "arrangement": "Part-time",
+      "companySize": "Startup (1-50)"
+    },
+    "profileCompletion": 100,
+    "resumeInfo": {
+      "name": "Aniket Shukla",
+      "email": "shuklaaniket090@gmail.com",
+      "phone": "220151030012",
+      "skills": [
+        "C",
+        "Css",
+        "Dart",
+        "Fastapi",
+        "Flutter",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "Rest Api",
+        "Sql",
+        "Tensorflow"
+      ],
+      "education": "B.Tech | Computer science & Engineering | Purs"
+    }
+  },
+  "b7e573679dcd2f17": {
+    "userId": "b7e573679dcd2f17",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "Graduation",
+      "field": "btech",
+      "gpa": "6.80",
+      "achievements": []
+    },
+    "interests": [],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 70,
+    "resumeInfo": {
+      "name": "Aniket Shukla",
+      "email": "shuklaaniket090@gmail.com",
+      "phone": "220151030012",
+      "skills": [
+        "C",
+        "Css",
+        "Dart",
+        "Fastapi",
+        "Flutter",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "Rest Api",
+        "Sql",
+        "Tensorflow"
+      ],
+      "education": "B.Tech | Computer science & Engineering | Purs"
+    }
+  },
+  "db7f521c726739e0": {
+    "userId": "db7f521c726739e0",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "graduation",
+      "field": "btech",
+      "gpa": "6.70",
+      "achievements": []
+    },
+    "interests": [],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 70,
+    "resumeInfo": {
+      "name": "Aniket Shukla",
+      "email": "shuklaaniket090@gmail.com",
+      "phone": "220151030012",
+      "skills": [
+        "C",
+        "Css",
+        "Dart",
+        "Fastapi",
+        "Flutter",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "Rest Api",
+        "Sql",
+        "Tensorflow"
+      ],
+      "education": "B.Tech | Computer science & Engineering | Purs"
+    }
+  },
+  "3dabad99ad878806": {
+    "userId": "3dabad99ad878806",
+    "name": "",
+    "email": "",
+    "skills": [],
+    "academic": {
+      "level": "",
+      "field": "",
+      "gpa": "",
+      "achievements": []
+    },
+    "interests": [],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 25,
+    "resumeInfo": {
+      "name": "Aniket Shukla",
+      "email": "shuklaaniket090@gmail.com",
+      "phone": "220151030012",
+      "skills": [
+        "C",
+        "Css",
+        "Dart",
+        "Fastapi",
+        "Flutter",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "Rest Api",
+        "Sql",
+        "Tensorflow"
+      ],
+      "education": "B.Tech | Computer science & Engineering | Purs"
+    }
+  },
+  "394fedc81f8cf439": {
+    "userId": "394fedc81f8cf439",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "graduation",
+      "field": "btech",
+      "gpa": "6",
+      "achievements": []
+    },
+    "interests": [],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 70,
+    "resumeInfo": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+91 9876543210",
+      "skills": [
+        "Aws",
+        "C",
+        "C++",
+        "Css",
+        "Docker",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "React",
+        "Rest Api",
+        "Sql"
+      ],
+      "education": "Bengaluru, India"
+    }
+  },
+  "21cce378453d1f2a": {
+    "userId": "21cce378453d1f2a",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "graduation",
+      "field": "btech",
+      "gpa": "6.80",
+      "achievements": []
+    },
+    "interests": [],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 70,
+    "resumeInfo": {
+      "name": "Aniket Shukla",
+      "email": "shuklaaniket090@gmail.com",
+      "phone": "220151030012",
+      "skills": [
+        "C",
+        "Css",
+        "Dart",
+        "Fastapi",
+        "Flutter",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "Rest Api",
+        "Sql",
+        "Tensorflow"
+      ],
+      "education": "B.Tech | Computer science & Engineering | Purs"
+    }
+  },
+  "ee9e0e235031cb04": {
+    "userId": "ee9e0e235031cb04",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "Python",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "graduation ",
+      "field": "btech cse",
+      "gpa": "6.80",
+      "achievements": []
+    },
+    "interests": [],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 70,
+    "resumeInfo": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+91 9876543210",
+      "skills": [
+        "Aws",
+        "C",
+        "C++",
+        "Css",
+        "Docker",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "React",
+        "Rest Api",
+        "Sql"
+      ],
+      "education": "Bengaluru, India"
+    }
+  },
+  "ec18c219f0fd510e": {
+    "userId": "ec18c219f0fd510e",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "Python",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "graduation",
+      "field": "btech",
+      "gpa": "6.70",
+      "achievements": []
+    },
+    "interests": [
+      {
+        "name": "psycology",
+        "level": 4
+      }
+    ],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 85,
+    "resumeInfo": {
+      "name": "Aniket Shukla",
+      "email": "shuklaaniket090@gmail.com",
+      "phone": "220151030012",
+      "skills": [
+        "C",
+        "Css",
+        "Dart",
+        "Fastapi",
+        "Flutter",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "Rest Api",
+        "Sql",
+        "Tensorflow"
+      ],
+      "education": "B.Tech | Computer science & Engineering | Purs"
+    }
+  },
+  "6192dfddd6582643": {
+    "userId": "6192dfddd6582643",
+    "name": "",
+    "email": "",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "type": "Technical",
+        "level": "Intermediate"
+      }
+    ],
+    "academic": {
+      "level": "graduation",
+      "field": "btech",
+      "gpa": "7",
+      "achievements": []
+    },
+    "interests": [],
+    "preferences": {
+      "workEnvironment": "",
+      "arrangement": "",
+      "companySize": ""
+    },
+    "profileCompletion": 70,
+    "resumeInfo": {
+      "name": "Aniket Shukla",
+      "email": "shuklaaniket090@gmail.com",
+      "phone": "220151030012",
+      "skills": [
+        "C",
+        "Css",
+        "Dart",
+        "Fastapi",
+        "Flutter",
+        "Git",
+        "Html",
+        "Java",
+        "Javascript",
+        "Mongodb",
+        "Mysql",
+        "Python",
+        "Rest Api",
+        "Sql",
+        "Tensorflow"
+      ],
+      "education": "B.Tech | Computer science & Engineering | Purs"
+    }
+  }
+}

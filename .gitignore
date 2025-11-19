@@ -1,0 +1,35 @@
+# Flutter
+**/build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android
+.gradle/
+local.properties
+/android/app/build/
+
+# iOS
+**/Pods/
+
+# Node.js
+node_modules/
+dist/
+
+# Python
+venv/
+**/__pycache__/
+*.pyc
+
+# IDE files
+.vscode/
+.idea/
+
+# ML & uploads
+uploads/
+*.zip
+*.bin
+*.onnx
+
+# Logs
+*.log

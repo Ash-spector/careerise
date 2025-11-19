@@ -1,0 +1,32 @@
+# Flutter build files
+build/
+.ios/
+.android/
+.macos/
+.linux/
+.windows/
+web/
+.pub-cache/
+.dart_tool/
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Python environment and cache
+backend-ml/venv/
+__pycache__/
+*.pyc
+
+# Zip and temp files
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+# Other junk
+.DS_Store
+Thumbs.db

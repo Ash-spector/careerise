@@ -1,0 +1,150 @@
+{
+  "ashspector09@gmail.com": {
+    "id": "1644315c3afd45a8",
+    "name": "anik",
+    "email": "ashspector09@gmail.com",
+    "password": "123456",
+    "created_at": 1762006106,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "TJIn-GKmkPjfo3DWapkyEyVLfZrmNSVT",
+    "otp": "699412",
+    "otp_ts": 1762006682
+  },
+  "test@gmail.com": {
+    "id": "e448c6f91692f2c0",
+    "name": "string",
+    "email": "test@gmail.com",
+    "password": "string",
+    "created_at": 1762006779,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "T_iDTR66NxlTgn21R7NgSHpvlkfIsJ-H"
+  },
+  "ashspector@gmail.com": {
+    "id": "cccb60b1dba80b3e",
+    "name": "ash",
+    "email": "ashspector@gmail.com",
+    "password": "123456",
+    "created_at": 1762007665,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "kF_IrNRd9pLdktStZv3KF-Kk8_cbJoq0"
+  },
+  "akshi@gmail.com": {
+    "id": "13e78431b51abd9f",
+    "name": "ss",
+    "email": "akshi@gmail.com",
+    "password": "12345",
+    "created_at": 1762016434,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "M4Df8lk1JvfcFNdnccdBT68Cge085HPl"
+  },
+  "aakshipathania111@gmail.com": {
+    "id": "21cce378453d1f2a",
+    "name": "akshi",
+    "email": "aakshipathania111@gmail.com",
+    "password": "12345",
+    "created_at": 1762017998,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "uUbuf2KmTaoZyT_RaPPdlcvSHu7PToho"
+  },
+  "shuklaaniket712@gmail.com": {
+    "id": "b7e573679dcd2f17",
+    "name": "anshu",
+    "email": "shuklaaniket712@gmail.com",
+    "password": "12345",
+    "created_at": 1762713319,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "YTzRYnE1ZY2je0joZ3le_IpvBBfQvrvP",
+    "otp": "268188",
+    "otp_ts": 1762715744
+  },
+  "abhaym249@gmail.com": {
+    "id": "db7f521c726739e0",
+    "name": "Abhay",
+    "email": "abhaym249@gmail.com",
+    "password": "12345",
+    "created_at": 1762750542,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "JiXNkUXhsSJsdQbHIyLEtgzCg2esrLHx"
+  },
+  "aaravkatoch901@gmail.com": {
+    "id": "3dabad99ad878806",
+    "name": "aarav",
+    "email": "aaravkatoch901@gmail.com",
+    "password": "12345",
+    "created_at": 1762750770,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "fRk7Q-BqaL4d20Yd64_nzeFcuk0-B35G"
+  },
+  "patyalnitin868@gmail.com": {
+    "id": "08459b0749f86237",
+    "name": "nitin",
+    "email": "patyalnitin868@gmail.com",
+    "password": "12345",
+    "created_at": 1762765203,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "V99FAt4oV43UVGC_iV5w6geJhkrVtBWF"
+  },
+  "shuklaaniket090@gmail.com": {
+    "id": "394fedc81f8cf439",
+    "name": "Anshu",
+    "email": "shuklaaniket090@gmail.com",
+    "password": "12345",
+    "created_at": 1762766865,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "nqpq4CMSS2UWdMS0W8lP3pDM4tyqoUg1",
+    "otp": "574873",
+    "otp_ts": 1763562911
+  },
+  "theaniketshukla@gmail.com": {
+    "id": "ee9e0e235031cb04",
+    "name": "anshu",
+    "email": "theaniketshukla@gmail.com",
+    "password": "12345",
+    "created_at": 1762878271,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "ngFVHoZnjlcD2wn48cK9DNIvpa2pG-ZL"
+  },
+  "akankshasharma2808@gmail.com": {
+    "id": "6192dfddd6582643",
+    "name": "chellu",
+    "email": "akankshasharma2808@gmail.com",
+    "password": "12345",
+    "created_at": 1762881360,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "qXPoxM4Kdc8xKioxqwy0UQXaIzrf09tO"
+  },
+  "skullrush443@gmail.com": {
+    "id": "72a86ff43c050b31",
+    "name": "vasu",
+    "email": "skullrush443@gmail.com",
+    "password": "12345",
+    "created_at": 1762929815,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "8ZOjE5Dph9RHiRIgweB9S0CywqAfRvAG",
+    "otp": "759539",
+    "otp_ts": 1762929866
+  },
+  "vasusingh235@gmail.com": {
+    "id": "ec18c219f0fd510e",
+    "name": "vasu",
+    "email": "vasusingh235@gmail.com",
+    "password": "12345",
+    "created_at": 1762929939,
+    "skillScore": 0,
+    "completion": 0,
+    "token": "QkOq59i3L6_hMvrezOZCsnMsVTs7M_Fy"
+  }
+}
