@@ -11,6 +11,7 @@ import 'pages/login_page.dart';
 import 'pages/signup_page.dart';
 import 'pages/otp_verify_page.dart';
 import 'pages/forgot_password_page.dart';
+import 'pages/reset_password_page.dart';
 import 'pages/roadmap_page.dart';
 import 'widgets/sidebar.dart';
 
@@ -34,52 +35,59 @@ class CareeriseApp extends StatelessWidget {
       title: 'Careerise',
       debugShowCheckedModeBanner: false,
 
-      // ✅ App theme
+      // 🌙 Dark theme UI
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color(0xFF0B0C10),
+        scaffoldBackgroundColor: const Color(0xFF050816),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.black,
           foregroundColor: Colors.white,
-          elevation: 1,
+          elevation: 0,
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF7B3EFF),
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(12)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
           ),
         ),
       ),
 
-      // ✅ Route setup
+      // 🔗 Navigation Route Setup
       initialRoute: initialRoute,
       routes: {
-        '/login': (context) => const LoginPage(),
-        '/signup': (context) => const SignupPage(),
-        '/forgot-password': (context) => const ForgotPasswordPage(),
+        '/login': (_) => const LoginPage(),
+        '/signup': (_) => const SignupPage(),
+        '/forgot': (_) => const ForgotPasswordPage(),
 
-        // ✅ OTP verification route
-        '/otp-verify': (context) {
-          final args = ModalRoute.of(context)?.settings.arguments;
-          final email = args is String ? args : '';
-          return OtpVerifyPage(email: email);
+        // Correct OTP route
+        '/verify-otp': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments as Map? ?? {};
+          final email = args['email'] ?? '';
+          final from = args['from'] ?? 'forgot';
+          return OtpVerifyPage(email: email, from: from);
         },
 
-        // ✅ SidebarLayout no longer takes any parameters
-        '/dashboard': (context) => const SidebarLayout(),
+        // Reset password
+        '/reset-password': (_) => const ResetPasswordPage(),
 
-        // ✅ Other screens
-        '/profile': (context) => const ProfileBuilderPage(),
-        '/career': (context) => const CareerInsightsPage(),
+        // Dashboard
+        '/dashboard': (_) => const SidebarLayout(),
+
+        // Other functional pages
+        '/profile': (_) => const ProfileBuilderPage(),
+        '/career': (_) => const CareerInsightsPage(),
+        '/exams': (_) => const ExamsPage(),
+        '/exam-details': (_) => const ExamDetailsPage(),
+
         '/roadmap': (context) {
-            final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-              return RoadmapPage(role: args['role'], roadmap: args['roadmap']);
-               },
-
-        '/exams': (context) => const ExamsPage(),
-        '/exam-details': (context) => const ExamDetailsPage(),
+          final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>? ?? {};
+          return RoadmapPage(
+            role: args['role'],
+            roadmap: args['roadmap'],
+          );
+        },
       },
     );
   }

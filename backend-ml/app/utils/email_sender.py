@@ -1,55 +1,42 @@
 # app/utils/email_sender.py
-
-from fastapi_mail import FastMail, MessageSchema, MessageType
-from app.email_config import email_config
+import os
+import httpx
 from fastapi import HTTPException
 
+RESEND_API_KEY = os.getenv("re_UptYX4G4_KnoQgFAZezHPHaKbwfN6ew2a")
+
 async def send_otp_email(email: str, otp: str):
-    """
-    Sends a 6-digit OTP to the provided email using Gmail SMTP.
-    Requires proper App Password configured in .env.
-    """
+    if not RESEND_API_KEY:
+        raise HTTPException(status_code=500, detail="Email service not configured")
 
-    subject = "Your Careerise OTP Verification Code"
-
-    # ✅ Beautiful HTML email template
-    html_content = f"""
-    <div style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
-        <div style="max-width: 500px; margin: auto; background: #fff; padding: 20px; border-radius: 10px;">
-            <h2 style="color: #7B3EFF; text-align: center;">Careerise Verification Code</h2>
-            <p style="font-size: 16px; color: #333;">
-                Hello 👋,<br><br>
-                Here’s your one-time password (OTP) to verify your Careerise account:
-            </p>
-            <div style="text-align: center; margin: 20px 0;">
-                <h1 style="letter-spacing: 4px; color: #7B3EFF;">{otp}</h1>
-            </div>
-            <p style="font-size: 14px; color: #555;">
-                ⚠️ This OTP is valid for <strong>5 minutes</strong>. Please don’t share it with anyone.
-            </p>
-            <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
-            <p style="text-align: center; font-size: 13px; color: #777;">
-                © 2025 Careerise — AI Career & Exam Insights Platform
-            </p>
-        </div>
+    url = "https://api.resend.com/emails"
+    html = f"""
+    <div style="font-family: Arial, sans-serif;">
+      <h2>Careerise OTP Verification</h2>
+      <p>Your OTP code is:</p>
+      <h1 style="letter-spacing:4px">{otp}</h1>
+      <p>This code is valid for 5 minutes.</p>
     </div>
     """
 
-    # ✅ Compose the message
-    message = MessageSchema(
-        subject=subject,
-        recipients=[email],
-        body=html_content,
-        subtype=MessageType.html,
-    )
+    payload = {
+        "from": "Careerise <onboarding@resend.dev>",
+        "to": email,
+        "subject": "Your Careerise OTP",
+        "html": html
+    }
 
     try:
-        fm = FastMail(email_config)
-        await fm.send_message(message)
-        print(f"✅ OTP email sent successfully to {email}")
-        return {"status": "sent"}
-
+        async with httpx.AsyncClient(timeout=10.0) as client:
+            res = await client.post(
+                url,
+                json=payload,
+                headers={"Authorization": f"Bearer {RESEND_API_KEY}"}
+            )
+        if res.status_code >= 400:
+            raise Exception(f"Resend error {res.status_code}: {res.text}")
+        print("📨 OTP sent via Resend to:", email)
+        return True
     except Exception as e:
-        # ✅ Print and raise detailed error
-        print(f"❌ Failed to send OTP email to {email}: {e}")
+        print("❌ Email send error:", e)
         raise HTTPException(status_code=500, detail=f"Email sending failed: {e}")

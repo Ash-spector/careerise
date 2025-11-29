@@ -4,81 +4,54 @@ import '../services/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final emailCtrl = TextEditingController();
-  final passCtrl = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
   bool loading = false;
 
-  bool isValidEmail(String email) {
-    return RegExp(r"^[\w\.-]+@[\w\.-]+\.\w+$").hasMatch(email);
+  void handleLogin() async {
+    setState(() => loading = true);
+    final result = await AuthService.login(email.text.trim(), password.text);
+    setState(() => loading = false);
+
+    if (result["success"] == true) {
+      final prefs = await SharedPreferences.getInstance();
+      if (result.containsKey('userId')) await prefs.setString('userId', result['userId']);
+      Navigator.pushReplacementNamed(context, "/dashboard");
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(result["message"] ?? "Login failed")));
+    }
   }
 
-  Future<void> doLogin() async {
-    if (!isValidEmail(emailCtrl.text.trim())) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text("Enter valid email")));
-      return;
-    }
-
-    setState(() => loading = true);
-
-    try {
-      final res = await AuthService.login(
-        emailCtrl.text.trim(),
-        passCtrl.text.trim(),
-      );
-
-      final prefs = await SharedPreferences.getInstance();
-      await prefs.setString("userId", res["userId"]);
-      await prefs.setString("userName", res["name"]);
-
-      Navigator.pushReplacementNamed(context, "/dashboard");
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Login failed: $e")),
-      );
-    }
-
-    setState(() => loading = false);
+  @override
+  void dispose() {
+    email.dispose();
+    password.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SizedBox(
-          width: 420,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text("Careerise", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold)),
-              const SizedBox(height: 20),
-
-              TextField(controller: emailCtrl, decoration: const InputDecoration(labelText: "Email")),
-              TextField(controller: passCtrl, decoration: const InputDecoration(labelText: "Password"), obscureText: true),
-              const SizedBox(height: 16),
-
-              ElevatedButton(
-                onPressed: loading ? null : doLogin,
-                child: loading ? const CircularProgressIndicator() : const Text("Login"),
-              ),
-
-              TextButton(
-                onPressed: () => Navigator.pushNamed(context, "/signup"),
-                child: const Text("Create account"),
-              ),
-
-              TextButton(
-                onPressed: () => Navigator.pushNamed(context, "/forgot-password"),
-                child: const Text("Forgot Password?"),
-              )
-            ],
-          ),
+      backgroundColor: Colors.black,
+      body: Padding(
+        padding: const EdgeInsets.all(22),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Careerise", style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold)),
+            const SizedBox(height: 40),
+            TextField(controller: email, decoration: const InputDecoration(labelText: "Email")),
+            TextField(controller: password, obscureText: true, decoration: const InputDecoration(labelText: "Password")),
+            const SizedBox(height: 20),
+            ElevatedButton(onPressed: loading ? null : handleLogin, child: loading ? const CircularProgressIndicator(color: Colors.white) : const Text("Login")),
+            TextButton(onPressed: () => Navigator.pushNamed(context, "/signup"), child: const Text("Create Account")),
+            TextButton(onPressed: () => Navigator.pushNamed(context, "/forgot"), child: const Text("Forgot Password?")),
+          ],
         ),
       ),
     );

@@ -3,99 +3,66 @@ import 'package:http/http.dart' as http;
 import '../config/api_config.dart';
 
 class AuthService {
-  static String _base() {
-    try {
-      return ApiConfig.baseApi;
-    } catch (_) {
-      return "http://10.0.2.2:8000";
+  static String get _base => ApiConfig.baseApi;
+  static Map<String, String> get _headers => {'Content-Type': 'application/json'};
+
+  // Signup returns Map with success bool & message (consistent)
+  static Future<Map<String, dynamic>> signup(String name, String email, String password) async {
+    final res = await http.post(
+      Uri.parse("$_base/auth/signup"),
+      headers: _headers,
+      body: jsonEncode({"name": name, "email": email, "password": password}),
+    );
+    final body = jsonDecode(res.body);
+    if (res.statusCode == 200 || res.statusCode == 201) {
+      return {"success": true, ...body};
     }
+    return {"success": false, "message": body["detail"] ?? body["message"] ?? "Signup failed"};
   }
 
-  // ✅ LOGIN
+  // Login returns map {success: bool, ...}
   static Future<Map<String, dynamic>> login(String email, String password) async {
-    final url = Uri.parse("${_base()}/auth/login");
     final res = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'email': email, 'password': password}),
+      Uri.parse("$_base/auth/login"),
+      headers: _headers,
+      body: jsonEncode({"email": email, "password": password}),
     );
-
-    if (res.statusCode >= 200 && res.statusCode < 300) {
-      return jsonDecode(res.body) as Map<String, dynamic>;
-    }
-    throw Exception('Login failed: ${res.statusCode} ${res.body}');
+    final body = jsonDecode(res.body);
+    if (res.statusCode == 200) return {"success": true, ...body};
+    return {"success": false, "message": body["detail"] ?? body["message"] ?? "Login failed"};
   }
 
-  // ✅ SIGNUP
-  static Future<Map<String, dynamic>> signup(
-      String name, String email, String password) async {
-    final url = Uri.parse("${_base()}/auth/signup");
-    final res = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'name': name, 'email': email, 'password': password}),
-    );
-
-    if (res.statusCode >= 200 && res.statusCode < 300) {
-      return jsonDecode(res.body) as Map<String, dynamic>;
-    }
-    throw Exception('Signup failed: ${res.statusCode} ${res.body}');
-  }
-
-  // ✅ SEND OTP
+  // sendOtp must return bool (so `if (ok)` works)
   static Future<bool> sendOtp(String email) async {
-    final url = Uri.parse("${_base()}/auth/send-otp");
     final res = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'email': email}),
+      Uri.parse("$_base/auth/send-otp"),
+      headers: _headers,
+      body: jsonEncode({"email": email}),
     );
-
     if (res.statusCode >= 200 && res.statusCode < 300) {
-      final data = jsonDecode(res.body);
-      if (data is Map<String, dynamic>) {
-        if (data["success"] == true) return true;
-        if (data["status"] == "OTP sent") return true;
-        if (data["status"] == "ok") return true;
-      }
+      final body = jsonDecode(res.body);
+      return body["success"] == true;
     }
-
     return false;
   }
 
-  // ✅ VERIFY OTP
-  static Future<Map<String, dynamic>> verifyOtp(String email, String otp) async {
-    final url = Uri.parse("${_base()}/auth/verify-otp");
+  // verifyOtp returns bool
+  static Future<bool> verifyOtp(String email, String otp) async {
     final res = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({'email': email, 'otp': otp}),
+      Uri.parse("$_base/auth/verify-otp"),
+      headers: _headers,
+      body: jsonEncode({"email": email, "otp": otp}),
     );
-
-    if (res.statusCode >= 200 && res.statusCode < 300) {
-      return jsonDecode(res.body) as Map<String, dynamic>;
-    }
-    throw Exception('Verify OTP failed: ${res.statusCode} ${res.body}');
+    return res.statusCode == 200;
   }
 
-  // ✅ RESET PASSWORD (new)
-  static Future<Map<String, dynamic>> resetPassword(
-      String email, String otp, String newPassword) async {
-    final url = Uri.parse("${_base()}/auth/reset-password");
+  // resetPassword returns bool
+  static Future<bool> resetPassword(String email, String otp, String newPassword) async {
     final res = await http.post(
-      url,
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode({
-        'email': email,
-        'otp': otp,
-        'new_password': newPassword,
-      }),
+      Uri.parse("$_base/auth/reset-password"),
+      headers: _headers,
+      body: jsonEncode({"email": email, "otp": otp, "new_password": newPassword}),
     );
-
-    if (res.statusCode >= 200 && res.statusCode < 300) {
-      return jsonDecode(res.body) as Map<String, dynamic>;
-    }
-
-    throw Exception('Reset password failed: ${res.statusCode} ${res.body}');
+    return res.statusCode == 200;
   }
 }
